@@ -21,7 +21,7 @@ class MessagePreparer:
         platform: str,
         tokens: List[str],
         title: str,
-        body: str ,
+        body: str,
         ttl: str = None,
         icon: str = None,
         image: str = None,

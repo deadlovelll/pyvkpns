@@ -124,7 +124,7 @@ class TestMessagePreparer:
         )
         assert_no_none(result)
 
-    def test_no_none_empty_optional_fields(self):
+    def test_prepare_empty_optional_fields(self):
         result = self.preparer.prepare(
             project_id="",
             auth_token="",
@@ -139,4 +139,11 @@ class TestMessagePreparer:
             click_action="",
             color=""
         )
-        assert_no_none(result)
+        msg = result["message"]
+
+        assert "title" not in msg["notification"]
+        assert "body" not in msg["notification"]
+
+        android_notif = msg["android"]["notification"]
+        assert "title" not in android_notif
+        assert "body" not in android_notif
