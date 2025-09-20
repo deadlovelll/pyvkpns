@@ -1,7 +1,7 @@
 import pytest
 from aioresponses import aioresponses
-from src.http_client import HttpClient
-from src.credentials import VKPNS_LINK
+from src.pyvkpns.http_client import HttpClient
+from src.pyvkpns.credentials import VKPNS_LINK
 
 import pytest_asyncio
 

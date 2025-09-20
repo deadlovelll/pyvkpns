@@ -1,8 +1,8 @@
 from typing import List
 
-from src.http_client import HttpClient
-from src.message.preparer import MessagePreparer
-from src.validator import ResponseValidator
+from src.pyvkpns.http_client import HttpClient
+from src.pyvkpns.message.preparer import MessagePreparer
+from src.pyvkpns.validator import ResponseValidator
 
 
 class VKPNSClient:
@@ -83,7 +83,6 @@ class VKPNSClient:
             icon=icon,
             image=image,
             channel_id=channel_id,
-            click_action=click_action,
             click_action=click_action,
             tokens=tokens,
             color=color,
