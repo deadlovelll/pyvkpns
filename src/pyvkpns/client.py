@@ -3,6 +3,10 @@ from typing import List
 from pyvkpns.http_client import HttpClient
 from pyvkpns.message.preparer import MessagePreparer
 from pyvkpns.validator import ResponseValidator
+from pyvkpns.exceptions import (
+    ProviderErrorException,
+    ValidationErrorException,
+)
 
 
 class VKPNSClient:
@@ -73,19 +77,24 @@ class VKPNSClient:
             error.
         """
         
-        data = self._message_preparer.prepare(
-            self._project_id,
-            self._service_token,
-            platform=self._platform,
-            title=title,
-            body=body,
-            ttl=ttl,
-            icon=icon,
-            image=image,
-            channel_id=channel_id,
-            click_action=click_action,
-            tokens=tokens,
-            color=color,
-        )
-        response = await self._client.send(data)
-        self._response_validator.validate(response)
+        try:
+            data = self._message_preparer.prepare(
+                self._project_id,
+                self._service_token,
+                platform=self._platform,
+                title=title,
+                body=body,
+                ttl=ttl,
+                icon=icon,
+                image=image,
+                channel_id=channel_id,
+                click_action=click_action,
+                tokens=tokens,
+                color=color,
+            )
+            response = await self._client.send(data)
+            self._response_validator.validate(response)
+            
+        except (ValidationErrorException, ProviderErrorException) as e:
+            await self._client.close()
+            raise e
