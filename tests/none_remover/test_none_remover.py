@@ -1,4 +1,4 @@
-from src.pyvkpns.utils import remove_none 
+from pyvkpns.utils import remove_none 
 from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 

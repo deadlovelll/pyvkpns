@@ -1,7 +1,7 @@
 import pytest
 
 from tests.utils import assert_no_none
-from src.pyvkpns.message.preparer import MessagePreparer
+from pyvkpns.message.preparer import MessagePreparer
 
 class TestMessagePreparer:
 

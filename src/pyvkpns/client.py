@@ -1,8 +1,8 @@
 from typing import List
 
-from src.pyvkpns.http_client import HttpClient
-from src.pyvkpns.message.preparer import MessagePreparer
-from src.pyvkpns.validator import ResponseValidator
+from pyvkpns.http_client import HttpClient
+from pyvkpns.message.preparer import MessagePreparer
+from pyvkpns.validator import ResponseValidator
 
 
 class VKPNSClient:

@@ -1,7 +1,7 @@
 from typing import Dict, Union
 import aiohttp
 
-from src.pyvkpns.credentials import VKPNS_LINK, HEADERS
+from pyvkpns.credentials import VKPNS_LINK, HEADERS
 
 
 class HttpClient:

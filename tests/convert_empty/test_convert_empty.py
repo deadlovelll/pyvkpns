@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import List, Optional, Dict
-from src.pyvkpns.utils import convert_empty_to_none  
+from pyvkpns.utils import convert_empty_to_none  
 
 
 @dataclass

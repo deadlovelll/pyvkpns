@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import AsyncMock, patch
-from src.pyvkpns.client import VKPNSClient
-from src.pyvkpns.exceptions import (
+from pyvkpns.client import VKPNSClient
+from pyvkpns.exceptions import (
     ValidationErrorException, 
     ProviderErrorException,
 )

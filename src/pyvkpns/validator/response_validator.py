@@ -1,6 +1,6 @@
 from typing import List, Dict, Union
 
-from src.pyvkpns.exceptions import (
+from pyvkpns.exceptions import (
     ValidationErrorException, 
     ProviderErrorException,
 )

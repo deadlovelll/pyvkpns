@@ -1,8 +1,8 @@
 from typing import List
 from dataclasses import asdict
 
-from src.pyvkpns.utils import remove_none, convert_empty_to_none
-from src.pyvkpns.message.model import (
+from pyvkpns.utils import remove_none, convert_empty_to_none
+from pyvkpns.message.model import (
     VKPNSMessage,
     ProviderCred,
     Message,
